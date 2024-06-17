@@ -57,9 +57,14 @@ body {
     width: 100%;
 }
 
-.carrinho {
+.carrinho, .menu-toggle {
     font-size: 1.75rem;
     color: #333;
+    cursor: pointer;
+}
+
+.mobile-icons {
+    display: none;
 }
 
 /* HERO */
@@ -100,7 +105,6 @@ body {
 .hero-description {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #f8f8f8;
     color: rgba(248, 248, 248, 0.7);
 }
 
@@ -130,35 +134,45 @@ body {
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        padding: 15px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
     }
 
     .links {
+        display: none;
         flex-direction: column;
         align-items: center;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .links.active {
+        display: flex;
     }
 
     .links a {
         margin: 10px 0;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
     }
 
-    .hero {
-        padding: 100px 20px;
+    .mobile-icons {
+        display: flex;
+        align-items: center;
     }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.25rem;
-    }
-
-    .hero-price {
-        font-size: 1.5rem;
-    }
-
-    .buy-button {
-        font-size: 1.25rem;
+    .menu-toggle {
+        margin-left: 10px;
     }
 }
