@@ -1,8 +1,17 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Usando uma fonte moderna */
+    color: #333;
+    background-color: #f4f4f9; /* Fundo claro */
+}
+
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -11,76 +20,145 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
+    background-color: #fff;
+    padding: 15px 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
     transition: top 0.3s ease;
 }
 
 .logo img {
-    max-height: 40px;
+    max-height: 50px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
 }
 
 .links a {
     text-decoration: none;
     color: #333;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-weight: 500;
+    position: relative;
+}
+
+.links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff69b4;
+    transition: width .3s;
+}
+
+.links a:hover::after {
+    width: 100%;
 }
 
 .carrinho {
     font-size: 1.75rem;
     color: #333;
-    margin-right: 2rem;
 }
 
-/**
-  HERO
-*/
-
+/* HERO */
 .hero {
     background-image: url('https://mirlenemary.wordpress.com/wp-content/uploads/2020/07/00os13maisvendidosherobannersemtextov1.jpg?w=945');
     background-size: cover;
     background-position: center;
-    color: #fff; /* Cor do texto */
-    padding: 100px 20px; /* Ajuste conforme necessário */
-    text-align: left; /* Alinhado à esquerda */
+    color: #fff;
+    padding: 150px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #000; /* Cor do título */
+    color: #fff;
 }
 
 .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
-    color: rgba(0, 0, 0, 0.4); /* Cor da descrição */
-    text-wrap: wrap;
+    color: #f8f8f8;
+    color: rgba(248, 248, 248, 0.7);
 }
 
 .hero-price {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
-    color: #000; /* Cor do preço */
+    color: #f8f8f8;
 }
 
 .buy-button {
-    background-color: #ff69b4; /* Mantido o botão rosa para destacar */
+    background-color: #ff69b4;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1.25rem;
+    padding: 15px 30px;
+    font-size: 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .buy-button:hover {
     background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links a {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    .hero-price {
+        font-size: 1.5rem;
+    }
+
+    .buy-button {
+        font-size: 1.25rem;
+    }
 }
