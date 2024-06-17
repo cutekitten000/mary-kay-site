@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+
+.carrinho {
+    font-size: 1.75rem;
+    color: #333;
+    margin-right: 2rem;
+}
+
+/**
+  HERO
+*/
+
+.hero {
+    background-image: url('https://mirlenemary.wordpress.com/wp-content/uploads/2020/07/00os13maisvendidosherobannersemtextov1.jpg?w=945');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Cor do texto */
+    padding: 100px 20px; /* Ajuste conforme necessário */
+    text-align: left; /* Alinhado à esquerda */
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000; /* Cor do título */
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.4); /* Cor da descrição */
+    text-wrap: wrap;
+}
+
+.hero-price {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #000; /* Cor do preço */
+}
+
+.buy-button {
+    background-color: #ff69b4; /* Mantido o botão rosa para destacar */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ff1493;
+}
