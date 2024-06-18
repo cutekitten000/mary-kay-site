@@ -192,19 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        let message = `Nome do Comprador: ${customerName}\n\n`;
-        message += `Itens no Carrinho:\n`;
+        let message = `Nome do Comprador: ${customerName}:\n\nItens no Carrinho:\n`;
 
         cart.forEach(item => {
-            message += `- ${item.name} (R$ ${item.price.toFixed(2)}) x ${item.quantity}\n`;
+            message += `- ${item.name} - R$${item.price.toFixed(2)} x ${item.quantity}\n`;
         });
     
-        message += `\nTotal: R$ ${totalPrice.toFixed(2)}`;
-
-        // Encode message with template literals to replace new lines with %0A
-        const encodedMessage = encodeURIComponent(message).replace(/%0A/g, '%0A');
+        message += `\nTotal: R$${totalPrice.toFixed(2)}`;
     
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 });
