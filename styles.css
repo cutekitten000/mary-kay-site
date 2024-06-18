@@ -342,6 +342,37 @@ body {
     transform: scale(1.05);
 }
 
+/* BACK TO TOP BUTTON */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff69b4;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    z-index: 1000; /* Para garantir que o botão fique acima de outros elementos */
+}
+
+.back-to-top ion-icon {
+    font-size: 2rem;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /**
  Responsividade 
 */
@@ -425,5 +456,16 @@ body {
     .cart-count {
         top: 22px;
         right: 44px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .back-to-top ion-icon {
+        font-size: 1.5rem;
     }
 }
