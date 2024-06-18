@@ -6,6 +6,7 @@
     <title>Mary Kay</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,26 +15,22 @@
             <div class="logo">
                 <img src="./assets/img/logo.png" alt="Mary Kay">
             </div>
-
             <div class="links">
                 <a href="#">Home</a>
                 <a href="#maisvendidos">Mais Vendido</a>
                 <a href="#">Produtos</a>
                 <a href="#">Ofertas</a>
             </div>
-
             <div class="carrinho">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span class="cart-count">0</span>
             </div>
-            
             <div class="mobile-menu">
                 <div class="menu-toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
             </div>
         </nav>
-        
         <div class="cart-modal">
             <div class="cart-modal-content">
                 <span class="close-modal">&times;</span>
@@ -48,9 +45,7 @@
                 </div>
             </div>
         </div>
-        
     </header>
-  
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Revele a Beleza da Pele</h1>
@@ -59,33 +54,13 @@
             <button class="buy-button">Comprar Agora</button>
         </div>
     </section>
-
     <section id="maisvendidos" class="mais-vendidos">
         <h2 class="section-title">Mais Vendidos</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="./assets/img/p1.jpg" alt="Produto 1">
-                <h3 class="product-name">Produto 1</h3>
-                <p class="product-price">R$ 99.99</p>
-                <button class="add-to-cart" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/p2.jpg" alt="Produto 2">
-                <h3 class="product-name">Produto 2</h3>
-                <p class="product-price">R$ 79.99</p>
-                <button class="add-to-cart" data-name="Produto 2" data-price="79.99">Adicionar ao Carrinho</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/p3.jpg" alt="Produto 3">
-                <h3 class="product-name">Produto 3</h3>
-                <p class="product-price">R$ 59.99</p>
-                <button class="add-to-cart" data-name="Produto 3" data-price="59.99">Adicionar ao Carrinho</button>
-            </div>
-        </div>
+        <div class="cards"></div>
     </section>
-
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
