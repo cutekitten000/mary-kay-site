@@ -57,17 +57,14 @@ body {
     width: 100%;
 }
 
-.carrinho, .menu-toggle {
-    font-size: 1.75rem;
-    color: #333;
-    cursor: pointer;
-}
-
 .mobile-icons {
     display: none;
 }
 
-/* HERO */
+/** 
+  HERO 
+*/
+
 .hero {
     background-image: url('https://mirlenemary.wordpress.com/wp-content/uploads/2020/07/00os13maisvendidosherobannersemtextov1.jpg?w=945');
     background-size: cover;
@@ -132,7 +129,9 @@ body {
     transform: scale(1.05);
 }
 
-/* Mais Vendidos */
+/**
+  SECTION Mais Vendidos 
+*/
 .mais-vendidos {
     padding: 60px 20px;
     text-align: center;
@@ -205,7 +204,21 @@ body {
     transform: scale(1.05);
 }
 
-/* Carrinho */
+/** 
+   Carrinho 
+*/
+.carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho, .menu-toggle {
+    font-size: 1.75rem;
+    color: #333;
+    cursor: pointer;
+}
+
 .cart-icon {
     position: fixed;
     top: 20px;
@@ -217,12 +230,20 @@ body {
 }
 
 .cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 17px;
+    top: 23px;
+
     background-color: #ff69b4;
     color: white;
     border-radius: 50%;
     padding: 0 8px;
     margin-left: 5px;
     font-size: 1rem;
+    font-size: 0.875rem;
 }
 
 .cart-modal {
@@ -302,7 +323,10 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsividade */
+/**
+ Responsividade 
+*/
+
 @media (max-width: 768px) {
     .navbar {
         padding: 15px;
@@ -376,5 +400,10 @@ body {
     .cart-modal-content {
         width: 95%;
         padding: 10px;
+    }
+
+    .cart-count {
+        top: 22px;
+        right: 44px;
     }
 }
