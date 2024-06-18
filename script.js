@@ -140,4 +140,21 @@ document.addEventListener("DOMContentLoaded", () => {
             cartModal.style.display = 'none';
         }
     });
+
+    // back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // Mostrar/ocultar botão de voltar ao topo
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // Rolar para o topo ao clicar no botão
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
