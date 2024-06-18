@@ -57,7 +57,7 @@ body {
     width: 100%;
 }
 
-.mobile-icons {
+.mobile-menu {
     display: none;
 }
 
@@ -307,6 +307,20 @@ body {
     gap: 10px;
 }
 
+.cart-checkout input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+.cart-checkout input:focus {
+    border-color: #ff69b4;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
 .checkout-button {
     background-color: #ff69b4;
     color: #fff;
@@ -362,7 +376,8 @@ body {
         text-align: center;
     }
 
-    .mobile-icons {
+    .mobile-menu
+     {
         display: flex;
         align-items: center;
     }
