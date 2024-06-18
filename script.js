@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartItemsList = document.querySelector('.cart-items');
     const cartTotalPrice = document.querySelector('.cart-total-price');
     const cardsContainer = document.querySelector('.cards');
+    const checkoutButton = document.querySelector('.checkout-button');
+    const customerNameInput = document.getElementById('customer-name');
+    const whatsappNumberInput = document.getElementById('whatsapp-number');
 
     let cart = [];
     let totalItems = 0;
@@ -65,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         backgroundColor: "#ff69b4",
                         stopOnFocus: true,
                     }).showToast();
+
+                    checkCheckoutButton();
                 });
             });
         });
@@ -83,6 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModal.addEventListener('click', () => {
         cartModal.style.display = 'none';
     });
+
+    // Verificar se pode habilitar o botão de finalizar compra
+    function checkCheckoutButton() {
+        const customerName = customerNameInput.value.trim();
+        checkoutButton.disabled = cart.length === 0 || customerName === '';
+    }
+
+    // Monitorar mudanças no campo de nome do comprador
+    customerNameInput.addEventListener('input', checkCheckoutButton);
 
     // Atualizar carrinho
     function updateCart() {
@@ -132,6 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+        checkCheckoutButton();
     }
 
     // Fechar modal ao clicar fora
@@ -156,5 +172,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // Rolar para o topo ao clicar no botão
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Finalizar compra e enviar via WhatsApp
+    checkoutButton.addEventListener('click', () => {
+        const customerName = customerNameInput.value.trim();
+        const whatsappNumber = whatsappNumberInput.value.trim();
+
+        if (!customerName) {
+            Toastify({
+                text: "Por favor, insira o nome do comprador",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#ff69b4",
+                stopOnFocus: true,
+            }).showToast();
+            return;
+        }
+
+        let message = `*Nome do Comprador:* ${customerName}%0A%0A`;
+        message += `*Itens no Carrinho:*%0A`;
+
+        cart.forEach(item => {
+            message += `- ${item.name} (R$ ${item.price.toFixed(2)}) x ${item.quantity}%0A`;
+        });
+
+        message += `%0A*Total:* R$ ${totalPrice.toFixed(2)}`;
+
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
     });
 });
