@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Produto 1",
+        "price": 99.99,
+        "image": "./assets/img/p1.jpg",
+        "available": true
+    },
+    {
+        "name": "Produto 2",
+        "price": 79.99,
+        "image": "./assets/img/p2.jpg",
+        "available": true
+    },
+    {
+        "name": "Produto 3",
+        "price": 59.99,
+        "image": "./assets/img/p3.jpg",
+        "available": true
+    }
+]
