@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mary Kay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/icon.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,6 +29,27 @@
                 </div>
             </div>
         </nav>
+
+        <div class="cart-icon">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span class="cart-count">0</span>
+        </div>
+        
+        <div class="cart-modal">
+            <div class="cart-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Itens no Carrinho</h2>
+                <ul class="cart-items"></ul>
+                <div class="cart-total">
+                    <p>Total: <span class="cart-total-price">R$ 0.00</span></p>
+                </div>
+                <div class="cart-checkout">
+                    <input type="text" placeholder="Nome do Comprador">
+                    <button class="checkout-button">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+        
     </header>
   
     <section class="hero">
@@ -47,25 +68,25 @@
                 <img src="./assets/img/p1.jpg" alt="Produto 1">
                 <h3 class="product-name">Produto 1</h3>
                 <p class="product-price">R$ 99.99</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-name="Produto 1" data-price="99.99">Adicionar ao Carrinho</button>
             </div>
             <div class="card">
                 <img src="./assets/img/p2.jpg" alt="Produto 2">
                 <h3 class="product-name">Produto 2</h3>
                 <p class="product-price">R$ 79.99</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-name="Produto 2" data-price="79.99">Adicionar ao Carrinho</button>
             </div>
             <div class="card">
                 <img src="./assets/img/p3.jpg" alt="Produto 3">
                 <h3 class="product-name">Produto 3</h3>
                 <p class="product-price">R$ 59.99</p>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-name="Produto 3" data-price="59.99">Adicionar ao Carrinho</button>
             </div>
         </div>
     </section>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
