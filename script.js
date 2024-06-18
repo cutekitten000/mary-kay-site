@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         links.classList.toggle('active');
     });
 
-    const cartIcon = document.querySelector('.cart-icon');
+    const cartIcon = document.querySelector('.carrinho');
     const cartModal = document.querySelector('.cart-modal');
     const closeModal = document.querySelector('.close-modal');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
