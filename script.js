@@ -200,8 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     
         message += `\nTotal: R$ ${totalPrice.toFixed(2)}`;
+        message = encodeURIComponent(message.replace(/\n/g, '%0A')); // Substitui '\n' por '%0A' e codifica a URL
     
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
         window.open(whatsappUrl, '_blank');
     });
 });
