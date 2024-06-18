@@ -114,7 +114,7 @@
   
   /* HERO */
   .hero {
-      background-image: url('./assets/img/hero-banner-1.jpg');
+      background-image: url('https://mirlenemary.wordpress.com/wp-content/uploads/2020/07/00os13maisvendidosherobannersemtextov1.jpg?w=945');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -146,6 +146,7 @@
       margin-bottom: 20px;
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: 'Playfair Display', serif;
   }
   
   .hero-description {
@@ -178,6 +179,91 @@
       transform: scale(1.05);
   }
   
+  /* Mais Vendidos */
+  .mais-vendidos {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+  }
+  
+  .section-title {
+      font-size: 2.5rem;
+      color: #ff69b4;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+  }
+  
+  .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: #ff69b4;
+      margin: 10px auto 0;
+  }
+  
+  .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+  }
+  
+  .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      width: 300px;
+  }
+  
+  .card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-name {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 20px 0 10px;
+      font-family: 'Playfair Display', serif;
+  }
+  
+  .product-price {
+      font-size: 1.25rem;
+      color: #ff69b4;
+      margin-bottom: 20px;
+  }
+  
+  .add-to-cart {
+      background-color: #ff69b4;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+  }
+  
+  .add-to-cart:hover {
+      background-color: #ff1493;
+      transform: scale(1.05);
+  }
+  
   /* Responsividade */
   @media (max-width: 768px) {
       .hero {
@@ -199,6 +285,16 @@
       .buy-button {
           padding: 10px 20px;
           font-size: 1.2rem;
+      }
+  
+      .cards {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      .card {
+          width: 90%;
+          margin-bottom: 20px;
       }
   }
   
