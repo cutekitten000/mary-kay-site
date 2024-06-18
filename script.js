@@ -192,15 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        let message = `*Nome do Comprador:* ${customerName}%0A%0A`;
-        message += `*Itens no Carrinho:*%0A`;
+        let message = `Nome do Comprador: ${customerName}\n\n`;
+        message += `Itens no Carrinho:\n`;
 
         cart.forEach(item => {
-            message += `- ${item.name} (R$ ${item.price.toFixed(2)}) x ${item.quantity}%0A`;
+            message += `- ${item.name} (R$ ${item.price.toFixed(2)}) x ${item.quantity}\n`;
         });
-
-        message += `%0A*Total:* R$ ${totalPrice.toFixed(2)}`;
-
+    
+        message += `\nTotal: R$ ${totalPrice.toFixed(2)}`;
+    
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
